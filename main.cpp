@@ -1,7 +1,5 @@
-#include <iostream>
 #include "test.cuh"
 
-int main() {
+auto main() -> int {
     test_gpu();
-    return 0;
 }
