@@ -29,4 +29,13 @@ include_directories(${PROJECT_NAME}_2
         kernels/test_2
 )
 
+add_executable(${PROJECT_NAME}_3 main.cpp)
+set_target_properties(${PROJECT_NAME}_3 PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
+target_link_libraries(${PROJECT_NAME}_3
+        kernels_3
+)
+include_directories(${PROJECT_NAME}_3
+        kernels/test_3
+)
+
 add_subdirectory(kernels)
