@@ -6,7 +6,6 @@
 #include <random>
 #include <stdio.h>
 #include <stdlib.h>
-#include <chrono>
 
 using type = int;
 constexpr size_t N = 256;
@@ -62,10 +61,7 @@ void test_gpu() {
     cudaMallocManaged(&gpu_bin, N * sizeof(type));
     cudaMallocManaged(&gpu_data, M * sizeof(type));
 
-    void (*kernels[])(const type *d_hist_data, type *const d_bin_data) = {
-        histogram256Kernel_01,
-        histogram256Kernel_02
-    };
+    void (*kernels[])(const type *d_hist_data, type *const d_bin_data) = {histogram256Kernel_01, histogram256Kernel_02};
     size_t num_kernels = sizeof(kernels) / sizeof(kernels[0]);
     std::cout << "Kernel size: " << num_kernels << std::endl;
 
