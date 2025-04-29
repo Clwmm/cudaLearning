@@ -8,8 +8,8 @@
 #include <stdlib.h>
 
 using type = int;
-constexpr size_t N = 256;
-constexpr size_t M = 16384;
+constexpr size_t N = 1;
+constexpr size_t M = 1024;
 
 constexpr uint16_t num_threads = 128;
 constexpr uint16_t num_blocks = M / num_threads;
